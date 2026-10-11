@@ -1,0 +1,39 @@
+1. Query: ?- house = house.
+   Result: true.
+   Explanation: Both terms are identical atoms, so they can be unified.
+
+2. Query: ?- house = abc.
+   Result: false.
+   Explanation: The atoms house and abc are different, so they cannot be unified.
+
+3. Query: ?- edge(a,b) = edge(C,b).
+   Result: C = a.
+   Explanation: Both structures have the same name and number of arguments. Setting C = a makes them identical.
+
+4. Query: ?- edge(a,d) = edge(C,B).
+   Result: C = a, B = d.
+   Explanation: Unification succeeds because C matches a and B matches d.
+
+5. Query: ?- edge(C,B) = edge(a,d).
+   Result: C = a, B = d.
+   Explanation: Both variables can take matching values, making the two structures identical.
+
+6. Query: ?- edge(A,f(g,h)) = edge(a,B).
+   Result: A = a, B = f(g,h).
+   Explanation: Unification succeeds because A matches a and B matches the compound term f(g,h).
+
+7. Query: ?- edge(A,A) = edge(b,c).
+   Result: false.
+   Explanation: The same variable A must have the same value in both positions. It cannot match both b and c.
+
+8. Query: ?- edge(A,A) = edge(b,b).
+   Result: A = b.
+   Explanation: Both arguments have the same value b, so assigning A = b makes unification successful.
+
+9. Query: ?- A = B, B = f.
+   Result: A = B, B = f.
+   Explanation: Unification succeeds because A and B are linked, and both take the value f.
+
+10. Query: ?- A = B, B = f, A = e.
+    Result: false.
+    Explanation: Since A and B are linked and B = f, A must also equal f. It cannot equal e at the same time.
