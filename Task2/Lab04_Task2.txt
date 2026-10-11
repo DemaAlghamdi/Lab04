@@ -1,0 +1,31 @@
+1. Query: ?- female(X).
+   Result: 
+	X = sara ;
+	X = nora.
+
+2. Query: ?- male(_).
+   Result:
+	true ;
+	true ;
+	true ;
+	true ;
+	true ;
+	true.
+
+3. Query: ?- parent(X, Y), parent(Y, faisal).
+   Result:
+	X = ali,
+	Y = muhammad .
+
+4. Query: ?- parent(ahmad, X), female(X).
+   Result:
+	X = sara ;
+	X = nora .
+
+5. Query: ?- parent(X, ahmad), parent(X, muhammad).
+   Result:
+	X = ali.
+
+6. Query: ?- parent(X, khan), parent(X, nora), male(khan).
+   Result:
+	X = ahmad.
